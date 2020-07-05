@@ -3,10 +3,13 @@ import {Container, LogoImagem, LoginInput, ViewButaoEntrada,
     CreateConta, ButaoTextCreateConta, EntrarConta, ButaoTextEntrarConta,
     EsqueceuSenha, TextEsqueceuSenha } from './components';
 import Logo from '../../assets/logo-on-page.png';
+import {useNavigation} from '@react-navigation/native';
 
-export default function Login(){
+export default function LoginPage(){
     const [cpf, setCPF] = useState('');
-    const [senha, setSenha] = useState('senha');
+    const [senha, setSenha] = useState('');
+
+    const navigation = useNavigation();
 
     return(
         <Container>
@@ -15,10 +18,9 @@ export default function Login(){
             onChangeText={(text) => setCPF(text)} clearTextOnvalue={cpf}
              placeholderTextColor="#B7B7B7" keyboardType='number-pad'></LoginInput>
             <LoginInput placeholder="Senha" placeholderTextColor="#B7B7B7" style={{marginTop: 12}}
-              secureTextEntry={true} textContentType="password" ></LoginInput>
-            
+              secureTextEntry={true} textContentType="password"  onChangeText={(text) => setSenha(text)}></LoginInput>
             <ViewButaoEntrada>
-                <CreateConta><ButaoTextCreateConta>Criar conta</ButaoTextCreateConta></CreateConta>
+                <CreateConta onPress={()=>navigation.navigate('Register')}><ButaoTextCreateConta>Criar conta</ButaoTextCreateConta></CreateConta>
                 <EntrarConta><ButaoTextEntrarConta>Entrar</ButaoTextEntrarConta></EntrarConta>
             </ViewButaoEntrada>
 
