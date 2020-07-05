@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ccbf",
-    "slug": "ccbf",
+    "name": "CCBF",
+    "slug": "CCBF",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,11 +16,10 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "android": {
+      "package": "com.coffie.cbbf",
+      "versionCode": 1
     }
+
   }
 }
