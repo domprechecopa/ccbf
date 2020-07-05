@@ -8,7 +8,8 @@ const Stack = createStackNavigator();
 export default function Routes(){
     return(
     <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login" headerMode="none" options={{headerShown: false}}>
+        <Stack.Navigator initialRouteName="Login" headerMode="none"
+         options={{headerShown: false}}>
             <Stack.Screen name="Login" component={Login}/>
         </Stack.Navigator>
     </NavigationContainer>
